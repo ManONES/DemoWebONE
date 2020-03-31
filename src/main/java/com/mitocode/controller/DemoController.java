@@ -23,25 +23,24 @@ public class DemoController {
 	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 		
 		Persona p = new Persona();
-
-		
 		
         int i = Integer.valueOf(name);
+        int iii = 0;        
         while (true) {         
             i++;
-            
             p.setIdPersona(i);
     		p.setNombre("ManySIES  " + i );
     		repo.save(p);
     		model.addAttribute("name",name); 
     		
-    		for (int ii = 0; ii < 100; ii++) {
-    			System.out.println(getRandomNumberInRange(1, 100));
+    		for (int ii = 0; ii < 10; ii++) {
+    	        while (true) {
+    			    iii =getRandomNumberInRange(1, 2000);
+    	            if (iii==1974) { break;}
+    	        }
     		}    		
-            
             if (i==Integer.valueOf(name) + 100) { break;}
         }
-
 		return "greeting";
 	}
 	
@@ -49,6 +48,7 @@ public class DemoController {
 	public String greeting(Model model) {
 				
 		model.addAttribute("personas",repo.findAll());
+		
 		return "greeting";
 	}
 	
