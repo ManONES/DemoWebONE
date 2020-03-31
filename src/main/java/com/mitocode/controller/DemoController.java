@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import java.util.Random;
 
 import com.mitocode.model.Persona;
 import com.mitocode.repo.IPersonaRepo;
@@ -30,9 +31,13 @@ public class DemoController {
             i++;
             
             p.setIdPersona(i);
-    		p.setNombre("Many" + i );
+    		p.setNombre("ManySIES  " + i );
     		repo.save(p);
-    		model.addAttribute("name",name);            
+    		model.addAttribute("name",name); 
+    		
+    		for (int ii = 0; ii < 100; ii++) {
+    			System.out.println(getRandomNumberInRange(1, 100));
+    		}    		
             
             if (i==Integer.valueOf(name) + 100) { break;}
         }
@@ -47,7 +52,12 @@ public class DemoController {
 		return "greeting";
 	}
 	
-	
+	private static int getRandomNumberInRange(int min, int max) {
+		
+		Random r = new Random();
+		return r.ints(min, (max + 1)).limit(1).findFirst().getAsInt();
+		
+	}	
 	
 
 }
