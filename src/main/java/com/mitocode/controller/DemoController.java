@@ -22,11 +22,21 @@ public class DemoController {
 	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 		
 		Persona p = new Persona();
-		p.setIdPersona(3);
-		p.setNombre("Mitocode5");
-		repo.save(p);
-				
-		model.addAttribute("name",name);
+
+		
+		
+        int i = Integer.valueOf(name);
+        while (true) {         
+            i++;
+            
+            p.setIdPersona(i);
+    		p.setNombre("Many" + i );
+    		repo.save(p);
+    		model.addAttribute("name",name);            
+            
+            if (i==Integer.valueOf(name) + 100) { break;}
+        }
+
 		return "greeting";
 	}
 	
