@@ -35,12 +35,13 @@ public class DemoController {
     		
     		for (int ii = 0; ii < 10; ii++) {
     	        while (true) {
-    			    iii =getRandomNumberInRange(1, 20000);
+    			    iii =getRandomNumberInRange(1, 200000);
     	            if (iii==1974) { break;}
     	        }
     		}    		
-            if (i==Integer.valueOf(name) + 100) { break;}
+            if (i==Integer.valueOf(name) + 50) { break;}
         }
+        
 		return "greeting";
 	}
 	
