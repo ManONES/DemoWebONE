@@ -31,6 +31,7 @@ public class DemoController {
             p.setIdPersona(i);
     		p.setNombre("ManySIES  " + i );
     		repo.save(p);
+    		
     		model.addAttribute("name",name); 
     		
     		for (int ii = 0; ii < 10; ii++) {
@@ -39,7 +40,7 @@ public class DemoController {
     	            if (iii==1974) { break;}
     	        }
     		}    		
-            if (i==Integer.valueOf(name) + 10) { break;}
+            if (i==Integer.valueOf(name) + 25) { break;}
         }
         
 		return "greeting";
