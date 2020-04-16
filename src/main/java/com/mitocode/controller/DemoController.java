@@ -29,7 +29,7 @@ public class DemoController {
         while (true) {         
             i++;
             p.setIdPersona(i);
-    		p.setNombre("ManySIES  :" + i );
+    		p.setNombre("ManySIESSSS  :" + i );
     		repo.save(p);
     		
     		model.addAttribute("name",name); 
