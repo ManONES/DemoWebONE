@@ -1,0 +1,4 @@
+com\mitocode\repo\IPersonaRepo.class
+com\mitocode\DemoWebApplication.class
+com\mitocode\model\Persona.class
+com\mitocode\controller\DemoController.class
